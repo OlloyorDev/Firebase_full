@@ -1,10 +1,7 @@
 import 'dart:async';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_scalable_ocr/flutter_scalable_ocr.dart';
 import 'package:imei_scanner/core/extension/build_context_extension.dart';
 import 'package:imei_scanner/core/theme/app_icons.dart';
 import 'package:imei_scanner/core/utils/app_utils.dart';
@@ -23,31 +20,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  String _scanBarcode = 'Unknown';
   String result = '';
   bool onSwitch = false;
   static const methodChannel = MethodChannel('flashLight');
-
-  Future<void> scanBarcodeNormal() async {
-    String barcodeScanRes;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-          '#ff6666', 'Cancel', true, ScanMode.BARCODE);
-      print(barcodeScanRes);
-    } on PlatformException {
-      barcodeScanRes = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _scanBarcode = barcodeScanRes;
-    });
-  }
 
   String text = "";
   final StreamController<String> controller = StreamController<String>();
@@ -149,7 +124,6 @@ class _MainPageState extends State<MainPage> {
 
   void changeTap(int index) async {
     if (index == 1) {
-      scanBarcodeNormal();
     } else {
       context
           .read<MainBloc>()

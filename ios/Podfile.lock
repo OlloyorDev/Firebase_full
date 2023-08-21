@@ -29,6 +29,9 @@ PODS:
   - Firebase/Performance (10.12.0):
     - Firebase/CoreOnly
     - FirebasePerformance (~> 10.12.0)
+  - Firebase/RemoteConfig (10.12.0):
+    - Firebase/CoreOnly
+    - FirebaseRemoteConfig (~> 10.12.0)
   - firebase_analytics (10.4.4):
     - Firebase/Analytics (= 10.12.0)
     - firebase_core
@@ -50,6 +53,10 @@ PODS:
     - Flutter
   - firebase_performance (0.9.2-4):
     - Firebase/Performance (= 10.12.0)
+    - firebase_core
+    - Flutter
+  - firebase_remote_config (4.2.4):
+    - Firebase/RemoteConfig (= 10.12.0)
     - firebase_core
     - Flutter
   - FirebaseABTesting (10.12.0):
@@ -285,6 +292,7 @@ DEPENDENCIES:
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
   - firebase_performance (from `.symlinks/plugins/firebase_performance/ios`)
+  - firebase_remote_config (from `.symlinks/plugins/firebase_remote_config/ios`)
   - Flutter (from `Flutter`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
@@ -356,6 +364,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_messaging/ios"
   firebase_performance:
     :path: ".symlinks/plugins/firebase_performance/ios"
+  firebase_remote_config:
+    :path: ".symlinks/plugins/firebase_remote_config/ios"
   Flutter:
     :path: Flutter
   flutter_local_notifications:
@@ -400,6 +410,7 @@ SPEC CHECKSUMS:
   firebase_crashlytics: 6043ce85800f96e53f15ee5051f9cfad10cce73d
   firebase_messaging: 334d68c3a36b6d4d5cd91e4f42509e0d4ae49828
   firebase_performance: 32e9164da8ae1cc69ee3edff231e2f020be9b6c2
+  firebase_remote_config: 2202a8929d451170be6505f90b2953f42ae238ec
   FirebaseABTesting: 09c328e6a86d562b4e1146c8a9073deadc566b77
   FirebaseAnalytics: 0270389efbe3022b54ec4588862dabec3477ee98
   FirebaseAppCheckInterop: f95a4feb9089867aff1a4bdc2ce309137e07736a
